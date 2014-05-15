@@ -1,0 +1,111 @@
+@import url(http://fonts.googleapis.com/css?family=Rubik+Mono+One);
+
+body {
+    font-family: 'Rubik Mono One', sans-serif;
+}
+p {
+    margin: 0;
+}
+
+.container {
+    background: url('../img/back.png') repeat-x;
+    position: relative;
+    width: 568px;
+    height: 568px;
+    overflow: hidden;
+}
+
+.floor {
+    position: relative;
+    width: 568px;
+    height: 108px;
+    background: url('../img/floor.png') repeat-x;
+}
+
+.start {
+    position: absolute;
+    z-index: 999;
+    top: 264px;
+    left: 219px;
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    background: url('../img/get_ready.png') no-repeat;
+}
+.playing .start {
+    display: none;
+}
+
+.gameover {
+    position: absolute;
+    z-index: 999;
+    top: 215px;
+    left: 185px;
+    width: 198px;
+    height: 38px;
+    display: none;
+    background: url('../img/game_over.png') no-repeat;
+}
+
+.score {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 999;
+}
+
+.bird {
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    width: 34px;
+    height: 24px;
+    background: url('../img/bird.png');
+    -webkit-transition: -webkit-transform 0.05s, bottom 0.05s;
+    -moz-transition: -moz-transform 0.05s, bottom 0.05s;
+    transition: transform 0.05s, bottom 0.05s;
+}
+
+.pipe {
+    width: 52px;
+    position: absolute;
+}
+
+.pipe.top {
+    height: 200px;
+    top: 0;
+    right: 50px;
+    background: url('../img/pipe_top.png') bottom;
+}
+.playing .pipe.top {
+    -webkit-animation: pipe 5s infinite linear;
+    -moz-animation: pipe 5s infinite linear;
+    animation: pipe 5s linear;
+}
+.pipe.bottom {
+    height: 200px;
+    bottom: 0;
+    right: 250px;
+    background: url('../img/pipe_bottom.png');
+}
+.playing .pipe.bottom {
+    -webkit-animation: pipe 5s infinite linear;
+    -moz-animation: pipe 5s infinite linear;
+    animation:pipe 5s linear;
+    -webkit-animation-delay: -2s;
+    -moz-animation-delay: -2s;
+    animation-delay: -2s;
+}
+
+@-webkit-keyframes pipe {
+    0% {right: -50px}
+    100% {right: 600px;}
+}
+@-moz-keyframes pipe {
+    0% {right: -50px}
+    100% {right: 600px;}
+}
+@-keyframes pipe {
+    0% {right: -50px}
+    100% {right: 600px;}
+}
